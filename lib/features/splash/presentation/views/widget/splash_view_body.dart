@@ -31,8 +31,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 // dispose دي عشان لما السبلاش يخلص ميخدش مساحه من الميموري على الفاصي بيقف اول ميخلص
   @override
   void dispose() {
-    super.dispose();
     animationController.dispose();
+
+    super.dispose();
   }
 
   @override
