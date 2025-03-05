@@ -7,7 +7,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40, bottom: 40, right: 24),
+      padding: const EdgeInsets.only(top: 50, bottom: 45, right: 30),
       child: Row(
         children: [
           Image.asset(
