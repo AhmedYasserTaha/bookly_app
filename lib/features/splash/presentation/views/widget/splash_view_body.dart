@@ -1,9 +1,8 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
-import 'package:bookly_app/core/utils/constans.dart';
-import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widget/sliding_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -54,7 +53,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController = AnimationController(
         vsync:
             this, // vsync: this معناه إننا بنربط الأنيميشن بـ TickerProvider، وده بيمنع استهلاك موارد الجهاز بدون داعي
-        duration: const Duration(milliseconds: 750));
+        duration: const Duration(seconds: 2));
 
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 5), end: Offset(0, 0))
@@ -67,8 +66,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Get.to(() => const HomeView(),
-            transition: Transition.fade, duration: kTransationDuration);
+        // Get.to(() => const HomeView(),
+        //     transition: Transition.fade, duration: kTransationDuration);
+        GoRouter.of(context).push(AppRouter.KhomeView);
       },
     );
   }
