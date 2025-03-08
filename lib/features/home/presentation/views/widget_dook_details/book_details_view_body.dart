@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:bookly_app/features/home/presentation/views/widget_dook_details/button_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widget_dook_details/custom_app_bar_book_details.dart';
+import 'package:bookly_app/features/home/presentation/views/widget_dook_details/smiller_books_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widget_home_view/book_realting.dart';
 import 'package:bookly_app/features/home/presentation/views/widget_home_view/custom_book_item_image.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,20 @@ class BookDetailsViewBody extends StatelessWidget {
               height: 35,
             ),
             const ButtonAction(),
+            const SizedBox(
+              height: 50,
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "You can also like",
+                style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            SmillerBooksListView(),
           ],
         ),
       ),
