@@ -5,18 +5,21 @@ class CustomAppBarBookDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.close),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.shopping_cart),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.close),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.shopping_cart),
+          ),
+        ],
+      ),
     );
   }
 }

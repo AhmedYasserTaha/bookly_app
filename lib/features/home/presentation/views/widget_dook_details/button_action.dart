@@ -7,7 +7,7 @@ class ButtonAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: const Row(
         children: [
           Expanded(
