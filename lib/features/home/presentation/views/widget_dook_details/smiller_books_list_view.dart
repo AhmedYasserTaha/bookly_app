@@ -11,8 +11,8 @@ class SmillerBooksListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
             child: CustomBookImage(),
           );
         },

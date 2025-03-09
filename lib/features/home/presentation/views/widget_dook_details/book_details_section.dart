@@ -15,7 +15,7 @@ class BookDetilsSection extends StatelessWidget {
           padding: const EdgeInsets.only(top: 40, bottom: 40),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child: CustomBookImage(),
+            child: const CustomBookImage(),
           ),
         ),
         const Text(
@@ -25,7 +25,7 @@ class BookDetilsSection extends StatelessWidget {
         const SizedBox(
           height: 5,
         ),
-        Opacity(
+        const Opacity(
           opacity: .7,
           child: Text(
             "Rudyard Kipling",

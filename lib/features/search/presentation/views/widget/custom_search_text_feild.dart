@@ -28,7 +28,7 @@ class CustomSearchTextFeild extends StatelessWidget {
 
   OutlineInputBorder bildOutlineInputBorder() {
     return OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.white),
+      borderSide: const BorderSide(color: Colors.white),
       borderRadius: BorderRadius.circular(
         12,
       ),

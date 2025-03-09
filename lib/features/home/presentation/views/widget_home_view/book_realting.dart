@@ -10,19 +10,19 @@ class BookRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        Icon(
+        const Icon(
           Icons.star,
           color: Color(0xffFFDD4F),
         ),
-        SizedBox(width: 5),
-        Text(
+        const SizedBox(width: 5),
+        const Text(
           "4.8",
           style: Styles.textStyle18,
         ),
-        SizedBox(width: 6),
+        const SizedBox(width: 6),
         Text(
           "(2390)",
-          style: Styles.textStyle16.copyWith(color: Color(0xff707070)),
+          style: Styles.textStyle16.copyWith(color: const Color(0xff707070)),
         ),
       ],
     );

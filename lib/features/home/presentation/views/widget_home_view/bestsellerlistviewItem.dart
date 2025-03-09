@@ -31,22 +31,22 @@ class BookListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
-                    child: Text(
+                    child: const Text(
                       "Harry Potter \nand the Goblet of Fire",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20,
                     ),
                   ),
-                  SizedBox(width: 3),
-                  Text(
+                  const SizedBox(width: 3),
+                  const Text(
                     "J.K. Rowling",
                     style: Styles.textStyle16,
                   ),
@@ -57,11 +57,11 @@ class BookListViewItem extends StatelessWidget {
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(width: 3),
+                      const SizedBox(width: 3),
                       // SizedBox(width: 45),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 50),
+                      const Spacer(),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 50),
                         child: BookRating(),
                       ),
                     ],
