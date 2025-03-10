@@ -33,6 +33,7 @@ class ServerFailure extends Failure {
         } else {
           return ServerFailure("Unexpected error. Please try again later!");
         }
+      // ignore: unreachable_switch_default
       default:
         return ServerFailure(
             "Oops! There was an error, please try again later!");
