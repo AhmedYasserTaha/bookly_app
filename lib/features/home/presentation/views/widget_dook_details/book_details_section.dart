@@ -15,7 +15,10 @@ class BookDetilsSection extends StatelessWidget {
           padding: const EdgeInsets.only(top: 40, bottom: 40),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child: const CustomBookImage(),
+            child: const CustomBookImage(
+              imageUrl:
+                  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dfx%2Blogo&psig=AOvVaw0SLwlKpzYvYGAEZ0Q_cO00&ust=1741698158247000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDkmbHJ_4sDFQAAAAAdAAAAABAE",
+            ),
           ),
         ),
         const Text(
