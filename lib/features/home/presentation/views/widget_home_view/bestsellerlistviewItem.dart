@@ -1,13 +1,16 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/utils/style.dart';
+import 'package:bookly_app/features/home/data/model/book_model/book.model.dart';
 import 'package:bookly_app/features/home/presentation/views/widget_home_view/book_realting.dart';
+import 'package:bookly_app/features/home/presentation/views/widget_home_view/custom_book_item_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
+  const BookListViewItem({super.key, required this.bookModel});
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,55 +21,51 @@ class BookListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.6 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(16),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.testImage),
-                  ),
-                ),
-              ),
-            ),
+            CustomBookImage(
+                imageUrl:
+                    bookModel.volumeInfo.imageLinks?.smallThumbnail ?? ''),
             const SizedBox(width: 30),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * .5,
-                    child: const Text(
-                      "Harry Potter \nand the Goblet of Fire",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: Styles.textStyle20,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .7,
+                      child: Text(
+                        bookModel.volumeInfo.title!,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: Styles.textStyle20,
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 3),
-                  const Text(
-                    "J.K. Rowling",
-                    style: Styles.textStyle16,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "19.99 €",
-                        style: Styles.textStyle20
-                            .copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(width: 3),
-                      // SizedBox(width: 45),
-                      const Spacer(),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 50),
-                        child: BookRating(),
-                      ),
-                    ],
-                  )
-                ],
+                    const SizedBox(width: 3),
+                    Text(
+                      (bookModel.volumeInfo.authors != null &&
+                              bookModel.volumeInfo.authors!.isNotEmpty)
+                          ? bookModel.volumeInfo.authors![0]
+                          : "Unknown Author",
+                      style: Styles.textStyle16,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Free",
+                          style: Styles.textStyle20
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const Spacer(),
+                        BookRating(
+                          rating: bookModel.volumeInfo.averageRating ?? 0,
+                          count: bookModel.volumeInfo.ratingsCount ?? 0,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
