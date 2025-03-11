@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/constans.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
+import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:bookly_app/features/home/presentation/view_model/feature_books_cubit/feature_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/view_model/news_books_cubit/news_books_cubit.dart';
 import 'package:flutter/material.dart';
@@ -22,12 +22,12 @@ class Bookly extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeatureBooksCubit(
-            getIt.get<HomeRepoImpl>(),
+            getIt.get<HomeRepo>(), // ✅ استدعاء HomeRepo بدلاً من HomeRepoImpl
           )..fetchFeatureBooks(),
         ),
         BlocProvider(
           create: (context) => NewsBooksCubit(
-            getIt.get<HomeRepoImpl>(),
+            getIt.get<HomeRepo>(), // ✅ نفس التعديل هنا
           )..fetchNewsBooks(),
         ),
       ],
@@ -39,7 +39,6 @@ class Bookly extends StatelessWidget {
           textTheme:
               GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
         ),
-        // home: const HomeView(),
       ),
     );
   }
